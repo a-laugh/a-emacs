@@ -12,7 +12,7 @@
 
 ;; 更改显示字体大小 16pt
 ;; http://stackoverflow.com/questions/294664/how-to-set-the-font-size-in-emacs
-(set-face-attribute 'default nil :height 160)
+;; (set-face-attribute 'default nil :height 160)
 
 ;; 快速打开配置文件
 (defun open-init-file()
@@ -35,5 +35,7 @@
 ;; (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
 (delete-selection-mode 1)
+
+(load-theme 'material t) ;; load material theme
 
 (provide 'init-global)
