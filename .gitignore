@@ -3,3 +3,6 @@
 
 # Packaging
 .cask
+/recentf
+elpa
+auto-save-list
