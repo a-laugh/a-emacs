@@ -8,5 +8,6 @@
 (require 'init-ui)
 (require 'init-python)
 (require 'init-markdown)
+(require 'init-git)
 
 (provide 'init-cells)
