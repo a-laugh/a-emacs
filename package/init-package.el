@@ -5,6 +5,7 @@
     flycheck
     material-theme
     py-autopep8
+    markdown-mode
     magit))
 
 (package-refresh-contents)
