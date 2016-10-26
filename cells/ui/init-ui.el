@@ -7,7 +7,7 @@
 (al-package-install 'solarized-theme)
 (load-theme 'solarized-dark t)
 
-(set-face-attribute 'default nil :height 160)
+(set-face-attribute 'default nil :height 140)
 
 (setq initial-frame-alist (quote ((fullscreen . maximized))))
 
