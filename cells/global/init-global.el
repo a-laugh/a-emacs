@@ -1,6 +1,9 @@
 (al-package-install 'company)
 (global-company-mode 1)
 
+(al-package-install 'ivy)
+(ivy-mode 1)
+
 (setq make-backup-files nil)
 
 (require 'recentf)
