@@ -6,6 +6,8 @@
 
 (setq make-backup-files nil)
 
+(fset 'yes-or-no-p 'y-or-n-p)
+
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-item 10)
