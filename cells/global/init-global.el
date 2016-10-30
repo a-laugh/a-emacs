@@ -1,8 +1,17 @@
 (al-package-install 'company)
 (global-company-mode 1)
 
-(al-package-install 'ivy)
-(ivy-mode 1)
+(ido-mode 1)
+
+(al-package-install 'smex)
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+(electric-pair-mode 1)
+
+(al-package-install 'avy)
 
 (setq make-backup-files nil)
 
