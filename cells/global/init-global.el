@@ -9,9 +9,16 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
+(al-package-install 'swiper)
+(setq ivy-use-virtual-buffers t)
+(setq ivy-count-format "(%d/%d) ")
+(global-set-key (kbd "C-s") 'swiper)
+
 (electric-pair-mode 1)
 
-(al-package-install 'avy)
+(al-package-install 'expand-region)
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
 
 (setq make-backup-files nil)
 
