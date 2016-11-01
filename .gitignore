@@ -12,3 +12,4 @@ auto-save-list
 backups/
 /eshell/history
 /smex-items
+/.mc-lists.el
