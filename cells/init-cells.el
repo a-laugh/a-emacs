@@ -9,5 +9,6 @@
 (require 'init-python)
 (require 'init-markdown)
 (require 'init-git)
+(require 'init-org)
 
 (provide 'init-cells)
