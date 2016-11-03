@@ -17,7 +17,7 @@
 (al-package-install 'solarized-theme)
 (load-theme 'solarized-dark t)
 
-(set-frame-font "Bitstream Vera Sans Mono-12")
+(set-frame-font "Bitstream Vera Sans Mono-11")
 (set-fontset-font (frame-parameter nil 'font)
 		  'unicode '("WenQuanYi Micro Hei Mono" . "unicode-bmp"))
 
