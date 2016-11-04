@@ -17,9 +17,13 @@
 (al-package-install 'solarized-theme)
 (load-theme 'solarized-dark t)
 
-(set-frame-font "Bitstream Vera Sans Mono-11")
-(set-fontset-font (frame-parameter nil 'font)
-		  'unicode '("WenQuanYi Micro Hei Mono" . "unicode-bmp"))
+(set-face-attribute
+  'default nil :font "Inconsolata-14")
+ 
+(dolist (charset '(kana han symbol cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font)
+                      charset
+                      (font-spec :family "WenQuanYi Micro Hei Mono" :size 20)))
 
 (setq initial-frame-alist (quote ((fullscreen . maximized))))
 
