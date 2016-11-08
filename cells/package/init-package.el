@@ -1,6 +1,6 @@
 (require 'package)
 (package-initialize)
-(add-to-list 'package-archives '("melpa-cn" . "http://elpa.zilongshanren.com/melpa/") t)
+(setq package-archives '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")))
 
 (defun al-package-install (package)
   (unless (package-installed-p package)

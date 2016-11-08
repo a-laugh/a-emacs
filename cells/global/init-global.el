@@ -18,6 +18,13 @@
 (global-set-key (kbd "C-c g") 'counsel-git)
 (global-set-key (kbd "C-c j") 'counsel-git-grep)
 
+(al-package-install 'undo-tree)
+(require 'undo-tree)
+(global-undo-tree-mode)
+
+(al-package-install 'window-numbering)
+(window-numbering-mode 1)
+
 (al-package-install 'multiple-cursors)
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
