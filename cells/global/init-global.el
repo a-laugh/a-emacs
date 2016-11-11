@@ -64,6 +64,6 @@
 (defun al-open-init-file()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
-(global-set-key (kbd "<f2>") 'al-open-init-file)
+(global-set-key (kbd "<f2> x") 'al-open-init-file)
 
 (provide 'init-global)
