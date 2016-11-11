@@ -32,7 +32,9 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
-(electric-pair-mode 1)
+(al-package-install 'smartparens)
+(require 'smartparens-config)
+(smartparens-global-mode 1)
 
 (al-package-install 'expand-region)
 (require 'expand-region)
@@ -50,6 +52,14 @@
 (delete-selection-mode 1)
 
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+
+(al-package-install 'find-file-in-project)
+(autoload 'find-file-in-project "find-file-in-project" nil t)
+(autoload 'find-file-in-project-by-selected "find-file-in-project" nil t)
+(autoload 'find-directory-in-project-by-selected "find-file-in-project" nil t)
+(autoload 'ffip-show-diff "find-file-in-project" nil t)
+(autoload 'ffip-save-ivy-last "find-file-in-project" nil t)
+(autoload 'ffip-ivy-resume "find-file-in-project" nil t)
 
 (defun al-open-init-file()
   (interactive)
