@@ -10,5 +10,6 @@
 (require 'init-markdown)
 (require 'init-git)
 (require 'init-org)
+(require 'init-web)
 
 (provide 'init-cells)

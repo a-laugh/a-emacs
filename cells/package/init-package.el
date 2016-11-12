@@ -9,4 +9,6 @@
       (package-refresh-contents)
       (package-install package))))
 
+(global-set-key (kbd "<f2> p l") 'package-list-packages)
+
 (provide 'init-package)

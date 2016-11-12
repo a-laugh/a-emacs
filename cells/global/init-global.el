@@ -61,6 +61,18 @@
 (autoload 'ffip-save-ivy-last "find-file-in-project" nil t)
 (autoload 'ffip-ivy-resume "find-file-in-project" nil t)
 
+(setq hippie-expand-try-function-list '(try-expand-debbrev
+					try-expand-debbrev-all-buffers
+					try-expand-debbrev-from-kill
+					try-complete-file-name-partially
+					try-complete-file-name
+					try-expand-all-abbrevs
+					try-expand-list
+					try-expand-line
+					try-complete-lisp-symbol-partially
+					try-complete-lisp-symbol))
+(global-set-key (kbd "s-/") 'hippie-expand)
+
 (defun al-open-init-file()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
