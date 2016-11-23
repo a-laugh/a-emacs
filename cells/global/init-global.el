@@ -5,7 +5,8 @@
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
 (setq ivy-count-format "(%d/%d) ")
-(global-set-key (kbd "C-s") 'swiper)
+(global-set-key (kbd "<f2> s") 'swiper)
+(global-set-key (kbd "<f2> S a") 'swiper-all)
 
 (al-package-install 'counsel)
 (global-set-key (kbd "M-x") 'counsel-M-x)
