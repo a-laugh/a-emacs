@@ -19,6 +19,8 @@
 (global-set-key (kbd "C-c g") 'counsel-git)
 (global-set-key (kbd "C-c j") 'counsel-git-grep)
 
+(al-package-install 'wgrep)
+
 (al-package-install 'undo-tree)
 (require 'undo-tree)
 (global-undo-tree-mode)
