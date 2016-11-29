@@ -18,8 +18,19 @@
 (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
 (global-set-key (kbd "C-c g") 'counsel-git)
 (global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "<f6>") 'ivy-resume)
+(global-set-key (kbd "C-c k") 'counsel-ag)
+(global-set-key (kbd "C-x l") 'counsel-locate)
 
 (al-package-install 'wgrep)
+
+(al-package-install 'avy)
+(global-set-key (kbd "<f2> j c") 'avy-goto-char)
+(global-set-key (kbd "<f2> j m c") 'avy-goto-char-2)
+(global-set-key (kbd "<f2> j l") 'avy-goto-line)
+(global-set-key (kbd "<f2> j w b") 'avy-goto-word-1)
+(global-set-key (kbd "<f2> j w s") 'avy-goto-word-0)
 
 (al-package-install 'undo-tree)
 (require 'undo-tree)
