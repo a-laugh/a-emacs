@@ -18,4 +18,6 @@
 
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
+(setq org-default-notes-file (concat org-directory "/notes.org"))
+
 (provide 'init-org)
