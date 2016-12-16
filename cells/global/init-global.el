@@ -3,6 +3,7 @@
 
 (al-package-install 'swiper)
 (ivy-mode 1)
+(setq ivy-display-style 'fancy)
 (setq ivy-use-virtual-buffers t)
 (setq ivy-count-format "(%d/%d) ")
 (global-set-key (kbd "<f2> s") 'swiper)
