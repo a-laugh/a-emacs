@@ -1,5 +1,6 @@
 (al-package-install 'elpy)
 (elpy-enable)
+(elpy-use-ipython)
 
 (al-package-install 'flycheck)
 (when (require 'flycheck nil t)
