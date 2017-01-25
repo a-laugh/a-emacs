@@ -76,6 +76,10 @@
 (autoload 'ffip-save-ivy-last "find-file-in-project" nil t)
 (autoload 'ffip-ivy-resume "find-file-in-project" nil t)
 
+(al-package-install 'yasnippet)
+(require 'yasnippet)
+(yas-global-mode 1)
+
 (setq hippie-expand-try-function-list '(try-expand-debbrev
 					try-expand-debbrev-all-buffers
 					try-expand-debbrev-from-kill
