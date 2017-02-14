@@ -10,6 +10,6 @@
   (define-key counsel-gtags-mode-map (kbd "s-,") 'company-gtags))
 
 (setenv "GTAGSLIBPATH" "/usr/include")
-(setenv "MAKEOBJDIRPREFIX" (file-truename "~/play-exam/life"))
+(setenv "MAKEOBJDIRPREFIX" (file-truename "~/github/play-exam"))
 
 (provide 'init-cpp)
