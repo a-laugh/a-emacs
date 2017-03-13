@@ -12,4 +12,8 @@
 (setenv "GTAGSLIBPATH" "/usr/include")
 (setenv "MAKEOBJDIRPREFIX" (file-truename "~/github/play-exam"))
 
+(al-package-install 'google-c-style)
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
+
 (provide 'init-cpp)
