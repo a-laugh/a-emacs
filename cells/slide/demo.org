@@ -1,0 +1,337 @@
+#+TITLE: 幻灯片样例展示
+#+SUBTITLE: org-mode slide
+#+DATE: 2016/03/30 18:00
+#+AUTHOR: 蒋文佼
+#+EMAIL: j.wenjiao@gmail.com
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:nil p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+CREATOR: Emacs 24.4.1 (Org mode 8.2.10)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: zh
+#+SELECT_TAGS: export
+
+#+GOOGLE_PLUS: https://plus.google.com/104864138618162134146
+#+COMPANY: 中兴通讯股份有限公司
+#+WWW: http://mzgcz.github.io
+#+GITHUB: https://github.com/mzgcz
+#+TWITTER: mzgcz
+
+#+FAVICON: images/org-icon.png
+#+ICON: images/emacs-icon.png
+#+HASHTAG: org-mode slide
+
+* 列表展示
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** 嵌套列表
+- 选项 1
+- 选项 2
+  + 第二层 1
+  + 第二层 2
+    * 第三层 1
+    * 第三层 2
+** 列表逐项展示
+逐项展示:
+#+ATTR_HTML: :class build
+- 选项 1
+- 选项 2
+- 选项 3
+** 列表逐项展示并淡出
+逐项展示:
+#+ATTR_HTML: :class build fade
+- 选项 1
+- 选项 2
+- 选项 3
+** 有序列表
+1. First
+2. Second
+3. Third
+   - Item
+   - Item
+** 嵌套列表逐项展示
+#+ATTR_HTML: :class build
+- Build me
+- Build me
+  #+ATTR_HTML: :class build
+  + Build me
+  + Build me
+    * No build
+    * No build
+* 字体大小
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** 小字体
+  :PROPERTIES:
+  :ARTICLE:  smaller
+  :END:
+This slide has =:ARTICLE:  smaller= property, so has *smaller* content.
+** 大字体
+  :PROPERTIES:
+  :ARTICLE:  larger
+  :END:
+This slide has =:ARTICLE:  larger= property, so has *larger* content.
+** 超大字体
+  :PROPERTIES:
+  :ARTICLE:  large
+  :END:
+This slide has =:ARTICLE:  large= property, so has *large* content.
+* 块
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** 代码块
+一段代码块看起来是这样的：
+#+BEGIN_SRC emacs-lisp
+  (def hello-world ()
+       (message "hello world!"))
+#+END_SRC
+- Just type =<s= in a newline, then press =[TAB]= to expand to =#+BEGIN_SRC ... #+END_SRC=.
+- Remember to specify the language name (e.g. =emacs-lisp=).
+** 代码块高亮
+  :PROPERTIES:
+  :ARTICLE:  smaller
+  :END:
+- Press =h= to highlight the code.
+- Simply wrap the area you want with *=<b> ... </b>=* in source block.
+#+BEGIN_SRC emacs-lisp
+(defun org-ioslide-quote-block (quote-block contents info)
+  (let* ((parent (org-export-get-parent-headline quote-block))
+	 (slide-prop (org-element-property :SLIDE parent))
+	 <b>(--make-sign (function (lambda (string)
+			   (replace-regexp-in-string
+			    "^ *\\(&#x201[34];\\)\\(.+\\)\\(<br */>\\|\n\\)"
+			    "<span class='float-right'>\\1\\2</span>\\3" string))))</b>)
+    (if (and slide-prop (string-match "segue" slide-prop))
+	(format "<q>\n%s</q>"
+		   <b>(funcall --make-sign contents)</b>)
+      (format "<blockquote>\n%s</blockquote>"
+	      (save-match-data
+		(replace-regexp-in-string
+		 "</span>\n</p>"
+		 "</span><br  />\n</p>"
+		 <b>(funcall --make-sign contents)</b>))))))
+#+END_SRC
+** 引用
+  :PROPERTIES:
+  :ARTICLE:  smaller
+  :END:
+Type =<q= in a newline, then press =[TAB]= to expand to a quote block (Use =\\= to break line forcely.):
+#+BEGIN_QUOTE
+一個人因為講實話而成為英雄，換句話說是整個社會都在說謊。\\
+一人は真実を言うだけからヒーローになる。換言すれば、この社会は全部が嘘
+している。\\
+If a person is treated as a hero for saying truth, that is the whole
+society are lying.\\
+
+      -- 柯文哲 Wen Jei, Ko. (2014)
+#+END_QUOTE
+** 诗文
+  :PROPERTIES:
+  :ARTICLE:  smaller
+  :END:
+Verse block is similar with quote's, but it will keeps line break. Take a poem as example:
+
+#+BEGIN_VERSE
+眾里尋他千百度
+驀然回首
+那人卻在
+燈火闌珊處
+  -- 辛棄疾〈青玉案〉
+#+END_VERSE
+* 图片
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** 插入图片
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 400px
+[[file:images/sky.jpg]]
+#+END_CENTER
+** 图片填充
+  :PROPERTIES:
+  :FILL:     images/sky.jpg
+  :TITLE:    white
+  :SLIDE:    white
+  :END:
+Text is in white.
+* 其他
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+** 表格
+Add a =*= prefix to highlight item.   e.g. =* Highlight Item=
+| Title1 | Title2            | Title2 |
+|--------+-------------------+--------|
+| Item1  | * 高亮选项        |     11 |
+| Item2  | Shiroshime Kanata |   * 25 |
+| Item3  | Test              |     56 |
+** 脚注
+Use =C-c C-x f= to create footnotes =[fn:N]=, which will be placed under slide[fn:1]:
+#+BEGIN_QUOTE
+Jump between footnotes with =C-c C-c= on =[fn:N]=.
+#+END_QUOTE
+#+ATTR_HTML: :class build
+- *↓ Look here!*
+** 数学公式
+=org-ioslide= uses MathJax to render math formula:
+
+$$\int_0^\infty e^{-x^2} dx=\frac{\sqrt{\pi}}{2}$$
+
+By default, MathJax is installed and enabled.
+
+If you don't need this, just add =#+USE_MATHJAX: false= in your slide file to shrink slide size.
+** 备注文稿
+- Press =p= to display speaker note.
+- Use =#+ATTR_HTML: :class note= before a QUOTE block, and its contents will be converted into speaker note.
+#+ATTR_HTML: :class note
+#+BEGIN_QUOTE
+This is the note area for presenter.
+- 选项 1
+- 选项 2
+A [[https://github.com/][link]] to Github!
+#+END_QUOTE
+* 过渡页面
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+** What Segue?
+*Segue* ([`segwe]) page is passing page.
+
+#+BEGIN_SRC org
+     :SLIDE: segue dark quote
+     :ASIDE: right bottom
+     :ARTICLE: flexbox vleft auto-fadein
+#+END_SRC
+
+** This Is A "Segue Page" Demo
+:PROPERTIES:
+:SLIDE: segue dark quote
+:ASIDE: right bottom
+:ARTICLE: flexbox vleft auto-fadein
+:END:
+   Text content of *Segue page* will appear here.
+
+** 过渡页面隐藏标题
+:PROPERTIES:
+:TITLE: hide
+:SLIDE: segue dark quote
+:ASIDE: right bottom
+:ARTICLE: flexbox vleft auto-fadein
+:END:
+
+#+BEGIN_QUOTE
+This is what a normal QUOTE block looks like, which under a segue slide.
+
+The second paragraph.
+
+  -- Name Sign
+#+END_QUOTE
+
+* 属性列表
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+** 可用快捷键
+- Pressing =h= highlights code snippets
+- Pressing =p= toggles speaker notes (if they're on the current slide)
+- Pressing =f= toggles fullscreen viewing
+- Pressing =w= toggles widescreen
+- Pressing =o= toggles overview mode
+- Pressing =ESC= toggles off these goodies
+** 可用属性（单个页面有效）
+Available properties *applied separatly on each slide pages:*
+#+BEGIN_SRC org
+:SLIDE: dark segue [thank-you-slide]
+:ASIDE: [left right] [top bottom]
+:ARTICLE: flexbox vleft auto-fadein [smaller/larger/large]
+#+END_SRC
+** 可用选项（全局有效）
+  :PROPERTIES:
+  :ARTICLE:  smaller
+  :END:
+
+Available options *applied on the whole slide*:
+#+BEGIN_SRC org
+ # Appear in cover-slide:
+ #+TITLE: Org-IO Slide Demo & Example
+ #+SUBTITLE: Here Is Subtitle
+ #+COMPANY: Company Name
+
+ # Appear in thank-you-slide:
+ #+GOOGLE_PLUS: https://plus.google.com/YOUR_ACCOUNT
+ #+WWW: http://your.blog.io/
+ #+GITHUB: http://github.com/YOUR_ACCOUNT
+ #+TWITTER: USER_NAME
+
+ # Appear under each slide:
+ #+FAVICON: images/emacs-icon.png
+ #+ICON: images/org-icon.png
+ #+HASHTAG: Hash tag appears in here
+
+ # Google Analytics
+ #+ANALYTICS: UA-42122243-1
+#+END_SRC
+** 软件包可选项
+Use or disable JS packages.
+#+BEGIN_SRC org
+ # Highlight code blocks with Prettify.js
+ ,#+USE_PRETTIFY: true
+
+ # Display math formula with MathJax.js
+ # MathJax is a little fat (~5 MB), set it `false` if no need to shrink the
+ # size of slide file
+ ,#+USE_MATHJAX: true
+
+ # Build list animation
+ ,#+USE_BUILDS: true
+
+
+#+END_SRC
+
+* 感谢
+- Add the following properties to one headline:
+#+BEGIN_SRC org
+:SLIDE: thank-you-slide segue
+:ASIDE: right
+:ARTICLE: flexbox vleft auto-fadein
+#+END_SRC
+
+#+BEGIN_QUOTE
+*Both* =thank-you-slide= and =segue= are necessary!
+#+END_QUOTE
+
+* 谢谢！
+:PROPERTIES:
+:SLIDE: thank-you-slide segue
+:ASIDE: right
+:ARTICLE: flexbox vleft auto-fadein
+:END:
+
+* Footnotes
+
+[fn:1] 这是脚注！
+
+
