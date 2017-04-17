@@ -11,4 +11,6 @@
 (require 'py-autopep8)
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
 
+(setq python-indent-guess-indent-offset nil)
+
 (provide 'init-python)

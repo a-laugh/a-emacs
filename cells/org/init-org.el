@@ -5,6 +5,7 @@
 (global-set-key (kbd "C-c b") 'org-iswitchb)
 (setq org-log-done t)
 (setq org-startup-indented t)
+(setq org-src-fontify-natively t)
 
 (dolist (path (directory-files "~/daily"))
   (let ((absolute-path (concat "~/daily/" path)))
@@ -19,5 +20,8 @@
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 
 (setq org-default-notes-file (concat org-directory "/notes.org"))
+
+;; (add-hook 'org-mode-hook (lambda ()
+;; 			   (setq truncate-lines nil)))
 
 (provide 'init-org)
