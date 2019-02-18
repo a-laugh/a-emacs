@@ -17,13 +17,21 @@
 (al-package-install 'solarized-theme)
 (load-theme 'solarized-dark t)
 
+;; (set-face-attribute
+;;   'default nil :font "DejaVu Sans Mono")
+ 
+;; (dolist (charset '(kana han symbol cjk-misc bopomofo))
+;;     (set-fontset-font (frame-parameter nil 'font)
+;;                       charset
+;;                       (font-spec :family "Source Han Sans CN Normal" :size 18)))
+
 (set-face-attribute
   'default nil :font "Inconsolata-14")
  
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font)
                       charset
-                      (font-spec :family "WenQuanYi Micro Hei Mono" :size 20)))
+                      (font-spec :family "微软雅黑" :size 20)))
 
 (setq initial-frame-alist (quote ((fullscreen . maximized))))
 

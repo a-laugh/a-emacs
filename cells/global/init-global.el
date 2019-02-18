@@ -1,3 +1,23 @@
+(setq gc-cons-threshold 64000000)
+(add-hook 'after-init-hook #'(lambda ()
+                               ;; restore after startup
+                               (setq gc-cons-threshold 800000)))
+
+(if (and (fboundp 'server-running-p)
+         (not (server-running-p)))
+    (server-start))
+
+(al-package-install 'use-package)
+;; Setup use-package
+(eval-when-compile
+  (require 'use-package))
+(use-package bind-key
+  :ensure t)
+;; so we can (require 'use-package) even in compiled emacs to e.g. read docs
+(use-package use-package
+  :commands use-package-autoload-keymap)
+
+
 (al-package-install 'company)
 (global-company-mode 1)
 
@@ -75,6 +95,7 @@
 (autoload 'ffip-show-diff "find-file-in-project" nil t)
 (autoload 'ffip-save-ivy-last "find-file-in-project" nil t)
 (autoload 'ffip-ivy-resume "find-file-in-project" nil t)
+(global-set-key (kbd "C-x M-f") 'project-find-file)
 
 (al-package-install 'yasnippet)
 (require 'yasnippet)
