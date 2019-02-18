@@ -75,15 +75,6 @@
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
-(setq make-backup-files nil)
-
-(fset 'yes-or-no-p 'y-or-n-p)
-
-(require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-menu-item 10)
-(global-set-key (kbd "C-x C-r") 'recentf-open-files)
-
 (delete-selection-mode 1)
 
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)

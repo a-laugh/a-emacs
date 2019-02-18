@@ -1,20 +1,21 @@
 ;; put similar things together
 
+(defun pstt-require-module (dir module)
+  (add-to-list 'load-path
+	       (expand-file-name dir user-emacs-directory))
+  (require module))
+
 ;; for emacs package repo
-(add-to-list 'load-path (expand-file-name "package" user-emacs-directory))
-(require 'for-package)
+(pstt-require-module "package" 'for-package)
 
 ;; for ui
-(add-to-list 'load-path (expand-file-name "ui" user-emacs-directory))
-(require 'for-ui)
+(pstt-require-module "ui" 'for-ui)
 
 ;; for base-operate
-(add-to-list 'load-path (expand-file-name "base-operate" user-emacs-directory))
-(require 'for-base-operate)
+(pstt-require-module "base-operate" 'for-base-operate)
 
 ;; for git
-(add-to-list 'load-path (expand-file-name "git" user-emacs-directory))
-(require 'for-git)
+(pstt-require-module "git" 'for-git)
 
 ;; (add-to-list 'load-path (expand-file-name "common" user-emacs-directory))
 ;; (require 'init-common)
