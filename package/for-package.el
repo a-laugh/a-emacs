@@ -9,4 +9,6 @@
       (package-refresh-contents)
       (package-install package))))
 
+(pstt-package-install 'use-package)
+
 (provide 'for-package)

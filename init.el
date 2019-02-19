@@ -17,6 +17,9 @@
 ;; for git
 (pstt-require-module "git" 'for-git)
 
+;; for cpp
+(pstt-require-module "cpp" 'for-cpp)
+
 ;; (add-to-list 'load-path (expand-file-name "common" user-emacs-directory))
 ;; (require 'init-common)
 
