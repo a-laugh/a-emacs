@@ -1,8 +1,10 @@
 (setq make-backup-files nil)
 (fset 'yes-or-no-p 'y-or-n-p)
+(delete-selection-mode 1)
 
-(pstt-package-install 'window-numbering)
-(window-numbering-mode 1)
+(use-package window-numbering
+  :init (pstt-package-install 'window-numbering)
+  :config (window-numbering-mode 1))
 
 (pstt-package-install 'swiper)
 (ivy-mode 1)
@@ -14,9 +16,14 @@
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
-(require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-menu-item 30)
-(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+(use-package recentf
+  :config (recentf-mode 1)
+  (setq recentf-max-menu-item 30)
+  (global-set-key (kbd "C-x C-r") 'recentf-open-files))
+
+
+(use-package undo-tree
+  :init (pstt-package-install 'undo-tree)
+  :config (global-undo-tree-mode))
 
 (provide 'for-base-operate)

@@ -1,23 +1,3 @@
-;; (al-package-install 'counsel-gtags)
-
-;; (add-hook 'c-mode-hook 'counsel-gtags-mode)
-;; (add-hook 'c++-mode-hook 'counsel-gtags-mode)
-
-;; (with-eval-after-load 'counsel-gtags
-;;   (define-key counsel-gtags-mode-map (kbd "M-t") 'counsel-gtags-find-definition)
-;;   (define-key counsel-gtags-mode-map (kbd "M-r") 'counsel-gtags-find-reference)
-;;   (define-key counsel-gtags-mode-map (kbd "M-s") 'counsel-gtags-find-symbol)
-;;   (define-key counsel-gtags-mode-map (kbd "s-,") 'company-gtags))
-
-;; (setenv "GTAGSLIBPATH" (concat "/usr/include"
-;; 			":"
-;; 			(file-truename "~/code/ct_engine/code/main")))
-;; (setenv "MAKEOBJDIRPREFIX" (file-truename "~/code/ct_engine/obj"))
-
-;; (al-package-install 'google-c-style)
-;; (add-hook 'c-mode-common-hook 'google-set-c-style)
-;; (add-hook 'c-mode-common-hook 'google-make-newline-indent)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Configuration/Customization:
 ;; Defines global variables that are later used to customize and set

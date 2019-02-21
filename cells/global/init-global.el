@@ -53,10 +53,6 @@
 (global-set-key (kbd "<f2> j w b") 'avy-goto-word-1)
 (global-set-key (kbd "<f2> j w s") 'avy-goto-word-0)
 
-(al-package-install 'undo-tree)
-(require 'undo-tree)
-(global-undo-tree-mode)
-
 (al-package-install 'window-numbering)
 (window-numbering-mode 1)
 
@@ -74,10 +70,6 @@
 (al-package-install 'expand-region)
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
-
-(delete-selection-mode 1)
-
-(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
 (al-package-install 'find-file-in-project)
 (autoload 'find-file-in-project "find-file-in-project" nil t)
